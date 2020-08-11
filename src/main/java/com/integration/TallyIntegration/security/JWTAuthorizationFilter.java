@@ -30,8 +30,8 @@ import io.jsonwebtoken.UnsupportedJwtException;
 public class JWTAuthorizationFilter extends OncePerRequestFilter {
 
 	private final String HEADER = "Authorization";
-	private final String PREFIX = "Rcs ";
-	private final String SECRET = "RCS19082019#1$@123";
+	private final String PREFIX = "PREFIX";
+	private final String SECRET = "YOUR_SECRET_KEY";
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
