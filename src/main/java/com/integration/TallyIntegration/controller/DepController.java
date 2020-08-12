@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.integration.TallyIntegration.service.HardwareService;
+import com.integration.TallyIntegration.service.DepService;
 
 /**
  * @author Aman
@@ -17,12 +17,12 @@ import com.integration.TallyIntegration.service.HardwareService;
  */
 @RestController
 @RequestMapping(value="/tally")
-public class HardwareController {
+public class DepController {
 	@Autowired
-	private HardwareService hardwareService;
+	private DepService depService;
 	
-	@PostMapping(value="/assetPur",produces={MediaType.APPLICATION_XML_VALUE},headers = "Accept=application/xml")
-	public String findCount(String facility_name) {
-		return hardwareService.HardwareRequest(facility_name);
+	@PostMapping(value="/dep",produces={MediaType.APPLICATION_XML_VALUE},headers = "Accept=application/xml")
+	public String dep(String facility_name) {
+		return depService.DepreciationRecord(facility_name);
 	}
 }

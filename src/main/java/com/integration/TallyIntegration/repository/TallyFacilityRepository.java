@@ -17,6 +17,6 @@ import com.integration.TallyIntegration.entity.TallyFacilityEntity;
 public interface TallyFacilityRepository extends CrudRepository<TallyFacilityEntity, Integer>{
 
 	@Query
-	("SELECT new com.integration.TallyIntegration.entity.TallyFacilityEntity(t.CategoryName, t.CostcenterName) FROM TallyFacilityEntity t")
+	("SELECT new com.mobile.mzolo.entity.TallyFacilityEntity(t.CategoryName, t.CostcenterName) FROM TallyFacilityEntity t")
 	List<TallyFacilityEntity> getAll();
 }

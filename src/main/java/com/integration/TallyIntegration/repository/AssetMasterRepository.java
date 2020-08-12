@@ -18,7 +18,7 @@ import com.integration.TallyIntegration.entity.AssetMasterEntity;
 public interface AssetMasterRepository extends CrudRepository<AssetMasterEntity, Integer>{
 	
 	@Query
-	("SELECT new com.integration.TallyIntegration.entity.AssetMasterEntity(a.subgroup_name, a.subgroup_code) from AssetMasterEntity a")
+	("SELECT new com.mobile.mzolo.entity.AssetMasterEntity(a.subgroup_name, a.subgroup_code) from AssetMasterEntity a")
 	List<AssetMasterEntity> getAll();
 
 }
