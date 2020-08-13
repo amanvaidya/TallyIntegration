@@ -18,7 +18,7 @@ import com.integration.TallyIntegration.security.JWTAuthorizationFilter;
 
 @EnableJpaRepositories(basePackages="com.integration.TallyIntegration.repository")
 @SpringBootApplication
-public class Launher extends SpringBootServletInitializer{
+public class Launcher extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
 		SpringApplication.run(Launher.class, args);
