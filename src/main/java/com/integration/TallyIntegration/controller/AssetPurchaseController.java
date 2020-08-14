@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.integration.TallyIntegration.service.DepService;
+
+import com.integration.TallyIntegration.service.AssetPurchaseService;
 
 /**
  * @author Aman
@@ -21,13 +22,13 @@ import com.integration.TallyIntegration.service.DepService;
  */
 @RestController
 @RequestMapping(value="/tally")
-public class DepController {
+public class AssetPurchaseController {
 	@Autowired
-	private DepService depService;
+	private AssetPurchaseService assetPurchaseService; 
 	
-	@PostMapping(value="/dep",produces={MediaType.APPLICATION_XML_VALUE},headers = "Accept=application/xml")
-	public String dep(@RequestParam(required=true)String facilityName,@RequestParam(required=true)String startDate,@RequestParam(required=true) String endDate) throws ParseException{
-		return depService.DepreciationRecord(facilityName,startDate,endDate);
+	@PostMapping(value="/assetPur",produces={MediaType.APPLICATION_XML_VALUE},headers = "Accept=application/xml")
+	public String generateAssetPurchase(@RequestParam(required=true)String facilityName) throws ParseException {
+		return assetPurchaseService.getPurchaseData(facilityName);
 	}
 	@ExceptionHandler(MissingServletRequestParameterException.class)
 	public String handleMissingParams(MissingServletRequestParameterException ex) {
@@ -36,3 +37,4 @@ public class DepController {
 	    // 
 	}
 }
+
